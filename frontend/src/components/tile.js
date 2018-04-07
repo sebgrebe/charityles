@@ -10,9 +10,7 @@ const Tile = ( {actions,data,editable} ) => {
       id: data._id
     })
     .then((res) => {
-      console.log(res)
       if (res.data.success) {
-        console.log('delete successful')
         actions.updateTiles(res.data.tiles)
       }
       else {

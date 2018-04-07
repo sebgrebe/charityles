@@ -48,7 +48,6 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log(this.state)
     return(
       <nav className={styles.navbar + " navbar-expand-md navbar-light"}>
         <a className='navbar-brand' href="/">ChariTyles</a>

@@ -3,8 +3,6 @@ const request = require('request')
 const getParams = require('../modules/getParams')
 
 module.exports = (data,cb) => {
-console.log(data.oauth_token)
-  console.log(data.oauth_verifier)
   request.post({
     url: 'https://api.twitter.com/oauth/access_token?oauth_verifier',
     oauth: {
