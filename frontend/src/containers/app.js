@@ -29,6 +29,7 @@ class App extends Component {
           }
         })
         .then((res) => {
+          console.log(res)
           if (res.data.success) {
             this.props.actions.updateUser(res.data.user)
             this.props.actions.updateAuth(true)
