@@ -1,0 +1,106 @@
+@import "../variables";
+
+.buttonContainer {
+  padding: 5px;
+}
+
+.btnAddTile {
+  width: 120px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+}
+
+.btnAddTileContainer {
+  text-align: center
+}
+
+.btnMsg {
+  size: 50px;
+  border-radius: 5px;
+}
+
+.btnBack {
+  font-size: 28px;
+  width: 25px;
+  position: absolute;
+  margin-left: 10px;
+  float: left;
+  background: rgba(230,230,230, 0.3);
+}
+
+.btnNext {
+  font-size: 28px;
+  width: 25px;
+  position: absolute;
+  margin-left: 275px;
+  float: right;
+}
+
+.btnSubmit {
+  width: 60px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.containerImg {
+  display: inline-block;
+  text-align: center;
+}
+
+.column {
+  width: 300px;
+  text-align: left;
+}
+
+.left {
+  float: left
+}
+
+.right {
+  float: right
+}
+
+.containerInner {
+  padding: 0;
+  margin: 0;
+  width: 300px;
+  display: inline-block
+}
+
+@media (min-width: $breakpoint-sm) {
+  .containerInner {
+    width: 600px
+  }
+}
+
+.containerOuter {
+  display: block;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.img {
+  width: 300px;
+  text-align: center;
+}
+
+.info {
+  text-align: left;
+  font-weight: bold;
+}
+
+.msg {
+  text-align: center
+}
+
+.input {
+  width: 240px;
+}
+
+.inputWide {
+  width: 300px;
+  margin-bottom: 10px;
+}

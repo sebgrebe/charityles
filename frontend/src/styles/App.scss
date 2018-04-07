@@ -1,0 +1,41 @@
+@import './variables';
+
+container {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5 {
+  text-align: center
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center
+}
+
+.button_no_border {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.center {
+  text-align: center
+}
+
+.disabled {
+  color: gray;
+  cursor: default;
+}
+
+.masonry {
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+}

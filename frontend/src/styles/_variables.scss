@@ -1,0 +1,7 @@
+$img-width: 250px;
+$breakpoint-sm: 768px;
+
+:export {
+  img-width: $img-width;
+  breakpoint-sm: $breakpoint-sm;
+}
