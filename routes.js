@@ -1,4 +1,4 @@
-const addTile = require('./modules/addtile')
+const addTile = require('./modules/addTile')
 const getAllTiles = require('./modules/getAllTiles')
 const getUserTiles = require('./modules/getUserTiles')
 const deleteTile = require('./modules/deleteTile')
