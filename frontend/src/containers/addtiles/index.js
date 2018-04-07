@@ -54,7 +54,7 @@ class AddTiles extends Component {
   saveTile() {
     axios.post('/api/addTile', {
       owner_id: this.props.state.user._id,
-      img: this.props.state.img,
+      img: this.state.img,
       caption: this.props.state.caption,
       donate_link: this.props.state.donate_link
     }).then((res) => {
