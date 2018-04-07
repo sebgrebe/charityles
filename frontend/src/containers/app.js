@@ -54,6 +54,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('Hi heroku')
     return (
       <div>
         <Navbar state={this.props.state} actions={this.props.actions}/>
