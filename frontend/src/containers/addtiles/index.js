@@ -14,25 +14,11 @@ class AddTiles extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      enabled: true,
-      msg_type: null
+      msg_type: null,
+      img: null
     }
     this.handleCheck = this.handleCheck.bind(this)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.state.images.length > 0) {
-      if (nextProps.state.images[0].selectable !== undefined) {
-        this.setState({
-          enabled: false
-        })
-      }
-      else {
-        this.setState({
-          enabled: true
-        })
-      }
-    }
+    this.selectImg = this.selectImg.bind(this)
   }
 
   handleCheck(e,save) {
@@ -59,6 +45,12 @@ class AddTiles extends Component {
     }
   }
 
+  selectImg(img) {
+    this.setState({
+      img: img
+    })
+  }
+
   saveTile() {
     axios.post('/api/addTile', {
       owner_id: this.props.state.user._id,
@@ -66,7 +58,6 @@ class AddTiles extends Component {
       caption: this.props.state.caption,
       donate_link: this.props.state.donate_link
     }).then((res) => {
-      console.log(res)
       if (res.data.success) {
         this.setState({
           msg_type: 'success'
@@ -96,18 +87,18 @@ class AddTiles extends Component {
               <div className={styles.column + ' ' + styles.left}>
                 <div className={styles.info}>You can either search for an image or add a URL manually.</div>
                 <SearchBar state={this.props.state} actions={this.props.actions} />
-                <AddURL state={this.props.state} actions={this.props.actions} />
+                <AddURL state={this.props.state} selectImg={this.selectImg}/>
                 <div className={styles.info}>Add a caption to describe the charity.</div>
                 <AddCaption actions={this.props.actions} />
                 <div className={styles.info}>Add a link to a page where users can donate.</div>
                 <AddDonateLink actions={this.props.actions} />
               </div>
               <div className={styles.column + ' ' + styles.right}>
-                <Image state={this.props.state} actions={this.props.actions} />
+                <Image state={this.props.state} actions={this.props.actions} selectImg={this.selectImg}/>
               </div>
             </div>
             <div className={styles.btnAddTileContainer}>
-              {this.state.enabled && this.props.state.images.length > 0 ? (
+              {this.state.img !== null ? (
                   <button onClick={(e) => this.handleSubmit(e)} className={styles.btnAddTile}>Add Tyle</button>
               ) : (
                   <button className={appStyles.disabled + ' ' + styles.btnAddTile} onSubmit={() => null}>Add Tile</button>

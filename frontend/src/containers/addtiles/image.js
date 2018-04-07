@@ -23,22 +23,21 @@ class SearchResult extends Component {
   }
 
   noImg() {
-    this.props.actions.updateImgs([{
+    this.props.selectImg({
       url: no_img_found,
       title: "No image found",
       selectable: false
-    }])
+    })
   }
 
   pickImg(url,title) {
-    this.props.actions.selectImg({
+    this.props.selectImg({
       url: url,
       title: title
     })
   }
 
   skipImg(val) {
-    console.log(val)
     let img_no = this.state.img_no
     img_no += val
     this.setState({

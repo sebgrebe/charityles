@@ -19,11 +19,9 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props.state)
     //get user (if authenticated)
     if (!this.props.state.authenticated) {
       const cookie = getCookie('access_token')
-      console.log(cookie)
       if (cookie.success) {
         axios.get('/api/user',{
           'headers': {
@@ -31,8 +29,6 @@ class App extends Component {
           }
         })
         .then((res) => {
-          console.log('get user')
-          console.log(res)
           if (res.data.success) {
             this.props.actions.updateUser(res.data.user)
             this.props.actions.updateAuth(true)
@@ -58,7 +54,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.state.authenticated)
     return (
       <div>
         <Navbar state={this.props.state} actions={this.props.actions}/>

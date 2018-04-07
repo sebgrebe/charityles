@@ -26,7 +26,6 @@
   font-size: 28px;
   width: 25px;
   position: absolute;
-  margin-left: 10px;
   float: left;
   background: rgba(230,230,230, 0.3);
 }
@@ -35,7 +34,7 @@
   font-size: 28px;
   width: 25px;
   position: absolute;
-  margin-left: 275px;
+  margin-left: 265px;
   float: right;
 }
 
@@ -56,11 +55,13 @@
 }
 
 .left {
-  float: left
+  float: left;
+
 }
 
 .right {
-  float: right
+  float: right;
+  text-align: right;
 }
 
 .containerInner {
@@ -72,7 +73,11 @@
 
 @media (min-width: $breakpoint-sm) {
   .containerInner {
-    width: 600px
+    width: 700px
+  }
+
+  .column {
+    width: 350px;
   }
 }
 

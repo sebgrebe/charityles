@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from '../../styles/components/addtiles.scss'
 
-const AddURL = ( {state,actions} ) => {
+const AddURL = ( {state,selectImg} ) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const image_url = document.getElementById('image_url').value
-    actions.updateImgs([{
+    selectImg({
       url: image_url,
       title: 'No title'
-    }])
+    })
   }
 
   return(
