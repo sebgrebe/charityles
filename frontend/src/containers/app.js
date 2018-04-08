@@ -23,24 +23,15 @@ class App extends Component {
     if (!this.props.state.authenticated) {
       const cookie = getCookie('access_token')
       if (cookie.success) {
-        axios.get('/api/user',{
-          'headers': {
-            access_token: cookie.cookie_val
-          }
-        })
-        .then((res) => {
-          console.log(res)
-          if (res.data.success) {
-            this.props.actions.updateUser(res.data.user)
-            this.props.actions.updateAuth(true)
-          }
-          else {
-            console.log('no user authenticated')
-          }
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+        const user = {
+          twitter_name: getCookie('twitter_name'),
+          _id: getCookie('user_id')
+        }
+        this.props.actions.updateUser(user)
+        this.props.actions.updateAuth(true)
+      }
+      else {
+        console.log('no user authenticated')
       }
     }
 

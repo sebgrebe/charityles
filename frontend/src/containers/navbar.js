@@ -44,7 +44,7 @@ class Navbar extends Component {
     e.preventDefault()
     this.props.actions.updateUser(null)
     this.props.actions.updateAuth(false)
-    setCookie('',60)
+    setCookie('',0)
   }
 
   render() {
