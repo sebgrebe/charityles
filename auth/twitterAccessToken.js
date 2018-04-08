@@ -14,6 +14,7 @@ module.exports = (data,cb) => {
       oauth_verifier: data.oauth_verifier
     }
   }, (err,r,body) => {
+    console.log(r)
     if (err) return cb({success: false, msg: err})
     if (r.statusCode === 200) {
       const data = {

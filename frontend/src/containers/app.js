@@ -24,8 +24,9 @@ class App extends Component {
       const cookie = getCookie('access_token')
       if (cookie.success) {
         const user = {
-          twitter_name: getCookie('twitter_name'),
-          _id: getCookie('user_id')
+          twitter_name: getCookie('twitter_name').cookie_val,
+          _id: getCookie('user_id').cookie_val,
+          twitter_img_url: getCookie('twitter_img_url').cookie_val
         }
         this.props.actions.updateUser(user)
         this.props.actions.updateAuth(true)

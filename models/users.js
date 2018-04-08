@@ -5,8 +5,7 @@ var userSchema = mongoose.Schema({
   twitter_screen_name: String,
   twitter_name: String,
   twitter_img_url: String,
-  access_token: String,
-  tiles: []
+  access_token: String
 })
 
 module.exports = mongoose.model('User',userSchema)

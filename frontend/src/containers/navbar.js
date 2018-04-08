@@ -44,7 +44,10 @@ class Navbar extends Component {
     e.preventDefault()
     this.props.actions.updateUser(null)
     this.props.actions.updateAuth(false)
-    setCookie('',0)
+    setCookie('access_token','',0)
+    setCookie('twitter_name','',0)
+    setCookie('user_id','',0)
+    setCookie('twitter_img_url','',0)
   }
 
   render() {

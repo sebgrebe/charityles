@@ -24,7 +24,6 @@ module.exports = (auth,user_data,cb) => {
       user.twitter_screen_name = user_data.twitter_user_screen_name
       user.twitter_name = user_data.twitter_name
       user.twitter_img_url = user_data.twitter_img_url
-      user.tiles = []
       user.access_token = auth.oauth_token
       saveUser(user,cb)
     }

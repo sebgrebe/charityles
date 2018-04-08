@@ -19,10 +19,12 @@ class Twitter extends Component {
       oauth_token: oauth_token,
       oauth_verifier: oauth_verifier
     }).then((res) => {
+      console.log(res)
       if (res.data.success) {
         setCookie('access_token',res.data.user.access_token,15)
         setCookie('twitter_name',res.data.user.twitter_name,15)
         setCookie('user_id',res.data.user._id,15)
+        setCookie('twitter_img_url',res.data.user.twitter_img_url,15)
         this.props.actions.updateUser(res.data.user)
         this.props.actions.updateAuth(true)
       }
